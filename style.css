@@ -1,0 +1,413 @@
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Black: hsl(0, 0%, 0%);
+  --Dark-Gray: hsl(0, 0%, 55%);
+  --Very-Dark-Gray: hsl(0, 0%, 41%);
+  --Font-Family-Alata: "Alata", sans-serif;
+  --Font-Family-Josefin-Sans: "Josefin Sans", sans-serif;
+}
+
+/*
+  ------------------------------
+  || GLOBAL - GLOBAL ||
+  ------------------------------
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  display: block;
+}
+ul {
+  list-style: none;
+}
+
+body {
+  min-width: 375px;
+  max-width: 1800px;
+  margin: auto;
+  position: relative;
+}
+/*
+  ------------------------------
+  || HEADER - HEADER - HEADER ||
+  ------------------------------
+*/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  color: var(--White);
+}
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  top: 0;
+  z-index: 5;
+  padding: 3rem 1rem;
+}
+nav {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  z-index: 2;
+  transform: translateX(-200%);
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  background-color: var(--Black);
+  transition: 1s;
+}
+nav ul li a {
+  font-family: var(--Font-Family-Alata);
+  margin: 1rem 1rem;
+  color: var(--White);
+}
+
+/*
+  ------------------------------
+  || MAIN - HERO -MAIN - HERO ||
+  ------------------------------
+*/
+.hero {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  max-height: 600px;
+  background-image: url(./images/mobile/image-hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.hero__content {
+  font-family: var(--Font-Family-Josefin-Sans);
+  font-weight: 300;
+  font-size: 2rem;
+  text-transform: uppercase;
+  max-width: min-content;
+  color: var(--White);
+  border: 2px solid;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  padding: 2rem;
+}
+/*
+  --------------------------------------
+  || MAIN - FEATURES -MAIN - FEATURES ||
+  --------------------------------------
+*/
+.features {
+  margin: 1em 1em;
+}
+.features__photo {
+  aspect-ratio: 654/448;
+  background-image: url(./images/mobile/image-interactive.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  transition: 1s;
+}
+.features__container {
+  text-align: center;
+  margin: 1rem 0;
+  transition: 1s;
+}
+.features__title {
+  font-family: var(--Font-Family-Josefin-Sans);
+  font-weight: 300;
+  margin: 1em 0;
+  text-transform: uppercase;
+  font-size: 2rem;
+  line-height: 1.2em;
+}
+.features__description {
+  margin: 1em 0;
+  padding: 0 1.5em;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+/*
+  -----------------------------------------
+  || MAIN - CREATIONS - MAIN - CREATIONS ||
+  -----------------------------------------
+*/
+.creations {
+  position: relative;
+  margin-bottom: 5rem;
+}
+.creations__title {
+  font-family: var(--Font-Family-Josefin-Sans);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+}
+.creations__cards {
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: repeat(1, 100%);
+}
+.creations__card {
+  cursor: pointer;
+  position: relative;
+  margin: 0.5rem;
+}
+.creations__card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: 1s;
+}
+.creations__card h3 {
+  display: flex;
+  align-items: center;
+  aspect-ratio: 654/240;
+  padding-left: 1em;
+  text-transform: uppercase;
+  font-family: var(--Font-Family-Josefin-Sans);
+  font-weight: 300;
+  color: var(--White);
+  background: linear-gradient(to right top, rgba(0, 0, 0, 1), transparent);
+}
+.creations__card h3:hover {
+  color: var(--Black);
+  background: none;
+}
+.creations__card:hover::before {
+  opacity: 0.5;
+  width: 95%;
+}
+.creations__card-1::before {
+  background-image: url(./images/mobile/image-deep-earth.jpg);
+}
+.creations__card-2::before {
+  background-image: url(./images/mobile/image-night-arcade.jpg);
+}
+.creations__card-3::before {
+  background-image: url(./images/mobile/image-soccer-team.jpg);
+}
+.creations__card-4::before {
+  background-image: url(./images/mobile/image-grid.jpg);
+}
+.creations__card-5::before {
+  background-image: url(./images/mobile/image-from-above.jpg);
+}
+.creations__card-6::before {
+  background-image: url(./images/mobile/image-pocket-borealis.jpg);
+}
+.creations__card-7::before {
+  background-image: url(./images/mobile/image-curiosity.jpg);
+}
+.creations__card-8::before {
+  background-image: url(./images/mobile/image-fisheye.jpg);
+}
+.creations__button {
+  position: absolute;
+  cursor: pointer;
+  padding: 0.75rem 2.5rem;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 3rem);
+  background: var(--White);
+  border: 2px var(--Black) solid;
+  transition: 0.5s;
+}
+.creations__button:hover {
+  background: var(--Black);
+  color: var(--White);
+}
+
+/*
+  ---------------------------------------
+  || FOOTER - FOOTER - FOOTER - FOOTER ||
+  ---------------------------------------
+*/
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--Black);
+}
+footer ul {
+  text-align: center;
+}
+
+footer ul li a {
+  margin: 1rem 0;
+  margin-right: 1rem;
+  color: var(--White);
+}
+.footer__socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer__footnote {
+  color: var(--Very-Dark-Gray);
+}
+@media only screen and (min-width: 700px) {
+  .hero__content {
+    font-size: 3rem;
+  }
+  .hero {
+    background-image: url(./images/desktop/image-hero.jpg);
+    background-position: center;
+  }
+  .creations__cards {
+    grid-template-columns: repeat(2, 50%);
+  }
+  .header__close,
+  .header__menu {
+    display: none !important;
+  }
+  header {
+    width: 90%;
+    left: 5%;
+  }
+  nav {
+    background: none;
+    transition: none;
+    transform: none;
+    position: initial;
+    height: auto;
+    padding-right: 1rem;
+  }
+  nav ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-direction: row;
+    padding: 0;
+  }
+  nav ul li a {
+    font-size: 0.8rem;
+    margin: 0 0.5rem;
+  }
+
+  .footer__links {
+    display: flex;
+  }
+  footer ul {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media only screen and (min-width: 1040px) {
+  header {
+    width: 80%;
+    left: 10%;
+  }
+  .hero {
+    background-image: url(./images/desktop/image-hero.jpg);
+    background-position: center;
+  }
+  .hero__content {
+    font-size: 3.5rem;
+    margin-left: 10%;
+    transform: translateX(1rem);
+    padding-right: 10%;
+  }
+  nav ul li a {
+    transition: 1s !important;
+    font-size: 1rem;
+  }
+  .features {
+    position: relative;
+    margin-bottom: 5rem;
+  }
+  .features__photo {
+    margin-left: 10%;
+    width: 50%;
+    background-image: url(./images/desktop/image-interactive.jpg) !important;
+  }
+
+  .features__container {
+    background-color: var(--White);
+    min-width: 500px;
+    position: absolute;
+    right: 0;
+    padding: 2em 5% 2em;
+    top: 20%;
+    width: 40%;
+  }
+  .creations__cards {
+    margin: auto;
+    max-width: 90%;
+    grid-template-columns: repeat(4, 25%);
+  }
+  .creations__title {
+    margin-left: 5%;
+    padding-left: 1.5rem;
+    text-align: left;
+  }
+  .creations__card h3 {
+    aspect-ratio: 256/450;
+    align-items: flex-end;
+    padding-bottom: 1em;
+  }
+  .creations__button {
+    top: 0;
+    bottom: initial;
+    right: 5%;
+    transform: none;
+    margin-right: 1.5rem;
+    left: inherit;
+  }
+  .creations__card-1::before {
+    background-image: url(./images/desktop/image-deep-earth.jpg) !important;
+  }
+  .creations__card-2::before {
+    background-image: url(./images/desktop//image-night-arcade.jpg) !important;
+  }
+  .creations__card-3::before {
+    background-image: url(./images/desktop//image-soccer-team.jpg) !important;
+  }
+  .creations__card-4::before {
+    background-image: url(./images/desktop//image-grid.jpg) !important;
+  }
+  .creations__card-5::before {
+    background-image: url(./images/desktop//image-from-above.jpg) !important;
+  }
+  .creations__card-6::before {
+    background-image: url(./images/desktop//image-pocket-borealis.jpg) !important;
+  }
+  .creations__card-7::before {
+    background-image: url(./images/desktop//image-curiosity.jpg) !important;
+  }
+  .creations__card-8::before {
+    background-image: url(./images/desktop//image-fisheye.jpg) !important;
+  }
+  footer {
+    display: flex;
+    padding: 2rem 10%;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .footer__links {
+    justify-content: flex-start;
+  }
+  .footer__socials {
+    justify-content: flex-end;
+  }
+  .footer__logo {
+    text-align: left;
+  }
+}
